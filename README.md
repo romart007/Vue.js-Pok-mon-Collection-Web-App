@@ -1,6 +1,6 @@
 # Pokemon Collection App App (my-pokemon-collection)
 
-A Pokémon collection web application that displays a list of favorite Pokémon. Preview link below:
+A Pokémon collection web application that displays a list of favorite Pokémon. Preview link here:
 https://pokemon-collection.netlify.app/
 
 ## Install the dependencies
