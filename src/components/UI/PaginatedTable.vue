@@ -2,7 +2,7 @@
   <q-table
     flat
     bordered
-    title="Pokémon"
+    :title="title"
     row-key="name"
     class="q-my-xl"
     :rows="rows"
@@ -64,6 +64,10 @@ defineOptions({
 });
 
 const props = defineProps({
+  title: {
+    String,
+    defualt: null,
+  },
   rows: Array,
   columns: Array,
   showDetails: {

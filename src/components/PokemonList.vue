@@ -1,6 +1,7 @@
 <template>
   <q-container>
     <PaginatedTable
+      title="Pokémon"
       :rows="store.pokemonList"
       :columns="tableColumn"
       showDetails
