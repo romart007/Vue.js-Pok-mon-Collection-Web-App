@@ -5,7 +5,8 @@ import { getPokemonList, getPokemonDetails } from "../services/apiService";
 export const usePokemonStore = defineStore('pokemon', {
   state: () => ({
     pokemonList: [],
-    pokemon: {}
+    pokemon: {},
+    loading: false
   }),
   getters: {
     topPokemons: (state) => {
@@ -15,10 +16,13 @@ export const usePokemonStore = defineStore('pokemon', {
   actions: {
     async fetchPokemonList(limit = 50) {
       try {
+        this.loading = true;
         const response = await getPokemonList(limit); // Fetching Pokémon list
         this.pokemonList = buildPokemonList(response);
       } catch (error) {
         console.error("Failed to fetch Pokémon list:", error);
+      } finally {
+        this.loading = false;
       }
     },
     async fetchPokemonData(id) {

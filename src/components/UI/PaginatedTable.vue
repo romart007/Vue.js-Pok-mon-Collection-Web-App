@@ -9,6 +9,7 @@
     :filter="filter"
     :columns="columns"
     v-model:pagination="pagination"
+    :loading="loading"
     hide-pagination
   >
     <template v-slot:body="props">
@@ -65,8 +66,12 @@ defineOptions({
 
 const props = defineProps({
   title: {
-    String,
-    defualt: null,
+    type: String,
+    default: null,
+  },
+  loading: {
+    type: Boolean,
+    default: false,
   },
   rows: Array,
   columns: Array,

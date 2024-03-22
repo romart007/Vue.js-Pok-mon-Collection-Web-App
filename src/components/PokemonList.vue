@@ -1,5 +1,6 @@
 <template>
   <q-container>
+    <AppSpinner v-if="store.loading" />
     <PaginatedTable
       title="Pokémon"
       :rows="store.pokemonList"
@@ -24,6 +25,7 @@ import { tableColumn } from "../data/TableHeaderConfig";
 const PaginatedTable = defineAsyncComponent(() =>
   import("./UI/PaginatedTable.vue")
 );
+const AppSpinner = defineAsyncComponent(() => import("./UI/AppSpinner.vue"));
 
 defineOptions({
   name: "PokemonList",
